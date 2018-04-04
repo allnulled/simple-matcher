@@ -19,6 +19,35 @@
 
 var SimpleMatcher = {};
 
+SimpleMatcher.classes = {};
+
+/**
+ *
+ *
+ */
+SimpleMatcher.classes.Object = function(data) {
+	for(var p in data) this[p] = data[p];
+	return this;
+};
+
+/**
+ *
+ *
+ */
+SimpleMatcher.classes.Data = function(data) {
+	for(var p in data) this[p] = data[p];
+	return this;
+};
+
+/**
+ *
+ *
+ */
+SimpleMatcher.classes.Error = function(data) {
+	for(var p in data) this[p] = data[p];
+	return this;
+};
+
 /**
  * @name for
  * @parameter text {string} Text to be used in the matchings.

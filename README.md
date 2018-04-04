@@ -48,33 +48,33 @@ The object SimpleMatcher exposes all the API.
 
 #### `SimpleMatcher.for(String:text)`
 
-Returns: `SimpleMatcherInstance`
+Returns: `SimpleMatcher.classes.Object`
 
 The `text` parameter (a `String`) is the text to be matched.
 
-#### `SimpleMatcherObject.first(...)`
+#### `{SimpleMatcher.classes.Object}.first(...)`
 
-Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
+Returns: `SimpleMatcher.classes.Data | SimpleMatcher.classes.Error`
 
 This method will give info about the first (string/regexp/functional) match in the text.
 
 Optionally, we have a second parameter, an offset (integer) of the text from which to start matching.
 
-#### `SimpleMatcherObject.first(String:text[, Integer:offset])`
+#### `{SimpleMatcher.classes.Object}.first(String:text[, Integer:offset])`
 
-Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
+Returns: `SimpleMatcher.classes.Data | SimpleMatcher.classes.Error`
 
 This version will compare string against string, crudely.
 
-#### `SimpleMatcherObject.first(RegExp:pattern[, Integer:offset])`
+#### `{SimpleMatcher.classes.Object}.first(RegExp:pattern[, Integer:offset])`
 
-Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
+Returns: `SimpleMatcher.classes.Data | SimpleMatcher.classes.Error`
 
 This version will compare regexp against strnig.
 
-#### `SimpleMatcherObject.first(Function:matcher[, Integer:offset])`
+#### `{SimpleMatcher.classes.Object}.first(Function:matcher[, Integer:offset])`
 
-Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
+Returns: `SimpleMatcher.classes.Data | SimpleMatcher.classes.Error`
 
 This version will use the provided function as matcher. That function receives 2 parameters:
 
@@ -82,7 +82,7 @@ This version will use the provided function as matcher. That function receives 2
 	
 	2. offset(:Integer): position of the text from which to start working on.
 
-#### `SimpleMatcherMatchData (~Object~)`
+#### `SimpleMatcher.classes.Data (~Object~)`
 
 Depending on the context, this type of objects will have:
 
@@ -92,7 +92,7 @@ Depending on the context, this type of objects will have:
 
 `found`: (String) text matched
 
-#### `SimpleMatcherMatchError (~Object~)`
+#### `SimpleMatcher.classes.Error (~Object~)`
 
 Depending on the context, this type of objects will have:
 
@@ -101,6 +101,8 @@ Depending on the context, this type of objects will have:
 `index`: (Integer) -1
 
 `error`: (String) message of the error, typically.
+
+
 
 # 4. Conclusion
 

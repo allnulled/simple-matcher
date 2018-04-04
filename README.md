@@ -39,24 +39,22 @@ const funcMatch = SimpleMatcher.for("This is some text").first((text,offset) => 
 If you want to differ between errors and correct data:
 ```js
 if(stringMatch.error) {
-	// Handle error
+  // Handle error
 }
 if(regexpMatch.error) {
-	// Handle error
+  // Handle error
 }
 if(funcMatch.error) {
-	// Handle error, but this one will depend on the manual implementation of the matcher we provide
+  // Handle error, but this one will depend on the manual implementation of the matcher we provide
 }
 ```
 
 Once we get the data back, we can obtain:
 
 	· ...the `index` (integer with the last position of the match, or -1 if failed)
-
 	· ...the `found` (string with the match)
-
 	· ...the `type` (with basically one out of "text", "regexp" and "function").
-	
+
 
 
 

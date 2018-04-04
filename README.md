@@ -97,9 +97,9 @@ Returns: `SimpleMatcher.classes.Data | SimpleMatcher.classes.Error`
 
 This version will use the provided function as matcher. That function receives 2 parameters:
 
- 1. text(:String): base text.
+ 1. `(String:) text`: base text.
  
- 2. offset(:Integer): position of the text from which to start working on.
+ 2. `(Integer:) offset`: position of the text from which to start working on.
 
 #### `SimpleMatcher.classes.Data (~Object~)`
 

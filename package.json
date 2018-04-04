@@ -1,0 +1,14 @@
+{
+  "name": "simple-matcher",
+  "version": "1.0.0",
+  "description": "Simple text matching for strings, regular expressions and functions.",
+  "main": "src/simple-matcher.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/simple-matcher-spec.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

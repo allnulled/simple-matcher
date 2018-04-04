@@ -24,7 +24,7 @@ For browsers, you should import the source code (`src/simple-matcher.js`):
 
 **`global.SimpleMatcher`** ` // in node.js` 
 
-# 2 Get started
+# 2. Get started
 
 The SimpleMatcher library is very simple.
 

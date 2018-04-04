@@ -31,10 +31,14 @@ The SimpleMatcher library is very simple.
 Start, for example, with:
 
 ```js
-var data = SimpleMatcher.for("This is some text").first("This is");
-console.log(data.index === 7 ? "Property 'index' is working" : "Yep, something is wrong with the index property...");
-console.log(data.type === "text" ? "Property 'type' is working" : "Yep, something is wrong with the type property...");
-console.log(data.found === "This is" ? "Property 'found' is working" : "Yep, something is wrong with the found property...");
+
+
+const stringMatch = SimpleMatcher.for("This is some text").first("This is");
+
+const regexpMatch = SimpleMatcher.for("This is some text").first(/THIS IS/gi);
+
+const funcMatch = SimpleMatcher.for("This is some text").first((text,offset) => {index:text.substr(0,offset).substr(4) !== "This" ? -1 : 4});
+
 
 ```
 
@@ -42,25 +46,35 @@ console.log(data.found === "This is" ? "Property 'found' is working" : "Yep, som
 
 The object SimpleMatcher exposes all the API.
 
-#### `SimpleMatcher.for(String:text) => SimpleMatcherInstance`
+#### `SimpleMatcher.for(String:text)`
+
+Returns: `SimpleMatcherInstance`
 
 The `text` parameter (a `String`) is the text to be matched.
 
-#### `SimpleMatcherObject.first(...) => SimpleMatcherMatchData | SimpleMatcherMatchError`
+#### `SimpleMatcherObject.first(...)`
+
+Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
 
 This method will give info about the first (string/regexp/functional) match in the text.
 
 Optionally, we have a second parameter, an offset (integer) of the text from which to start matching.
 
-#### `SimpleMatcherObject.first(String:text[, Integer:offset]) => SimpleMatcherMatchData | SimpleMatcherMatchError`
+#### `SimpleMatcherObject.first(String:text[, Integer:offset])`
+
+Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
 
 This version will compare string against string, crudely.
 
-#### `SimpleMatcherObject.first(RegExp:pattern[, Integer:offset]) => SimpleMatcherMatchData | SimpleMatcherMatchError`
+#### `SimpleMatcherObject.first(RegExp:pattern[, Integer:offset])`
+
+Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
 
 This version will compare regexp against strnig.
 
-#### `SimpleMatcherObject.first(Function:matcher[, Integer:offset]) => SimpleMatcherMatchData | SimpleMatcherMatchError`
+#### `SimpleMatcherObject.first(Function:matcher[, Integer:offset])`
+
+Returns: `SimpleMatcherMatchData | SimpleMatcherMatchError`
 
 This version will use the provided function as matcher. That function receives 2 parameters:
 
@@ -74,9 +88,9 @@ Depending on the context, this type of objects will have:
 
 `type`:  (String) "text" | "regexp" | "function"
 
-`index`: (Integer) positions advanced by the index,
+`index`: (Integer) final position of the index
 
-`found`: (String) text matched,
+`found`: (String) text matched
 
 #### `SimpleMatcherMatchError (~Object~)`
 

@@ -51,9 +51,9 @@ if(funcMatch.error) {
 
 Once we get the data back, we can obtain:
 
-	· ...the `index` (integer with the last position of the match, or -1 if failed)
-	· ...the `found` (string with the match)
-	· ...the `type` (with basically one out of "text", "regexp" and "function").
+ · ...the `index` (integer with the last position of the match, or -1 if failed)
+ · ...the `found` (string with the match)
+ · ...the `type` (with basically one out of "text", "regexp" and "function").
 
 
 

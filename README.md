@@ -31,16 +31,35 @@ The SimpleMatcher library is very simple.
 Start, for example, with:
 
 ```js
-
-
 const stringMatch = SimpleMatcher.for("This is some text").first("This is");
-
 const regexpMatch = SimpleMatcher.for("This is some text").first(/THIS IS/gi);
-
 const funcMatch = SimpleMatcher.for("This is some text").first((text,offset) => {index:text.substr(0,offset).substr(4) !== "This" ? -1 : 4});
-
-
 ```
+
+If you want to differ between errors and correct data:
+```js
+if(stringMatch.error) {
+	// Handle error
+}
+if(regexpMatch.error) {
+	// Handle error
+}
+if(funcMatch.error) {
+	// Handle error, but this one will depend on the manual implementation of the matcher we provide
+}
+```
+
+Once we get the data back, we can obtain:
+
+	· ...the `index` (integer with the last position of the match, or -1 if failed)
+
+	· ...the `found` (string with the match)
+
+	· ...the `type` (with basically one out of "text", "regexp" and "function").
+	
+
+
+
 
 # 3. API
 
